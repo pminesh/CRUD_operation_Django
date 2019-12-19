@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Edit Data</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <form action="/update/{{employee.id}}" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Email ID</th>
+                <th>Employee Contact</th>
+            </tr>       
+            
+            <tr>
+                <td><input type="text" value="{{employee.eid }}" ></td>
+                <td><input type="text" value="{{ employee.ename }}"></td>
+                <td><input type="email" value="{{ employee.eemail }}"></td>
+                <td><input type="text"  value="{{ employee.econtact }}"></td>
+                <td><input type="submit" value="Update"></td>
+            </tr>
+            
+        </table>
+    </form>
+</body>
+
+</html>
